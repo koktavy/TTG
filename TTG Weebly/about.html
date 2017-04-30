@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>About - TTG</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<style>
+
+html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  
+}
+
+.has-overlay {
+  overflow: hidden;
+  height: auto;
+}
+
+.has-overlay > body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.modal--fade,
+.modal--show {
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  display: none\9;
+}
+
+.modal--fade:target,
+.modal--show:target,
+.is-active.modal--fade,
+.is-active.modal--show {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  width: auto;
+  height: auto;
+  opacity: 1;
+}
+
+.is-active.modal--fade,
+.is-active.modal--show {
+  display: block\9;
+  height: 100% \9;
+  width: 100% \9;
+}
+
+.modal--fade:target,
+.modal--show:target,
+.is-active.modal--fade,
+.is-active.modal--show {
+  display: block\9;
+}
+
+.modal--fade .modal-inner,
+.modal--show .modal-inner {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  z-index: 20;
+  margin-left: -325px;
+  width: 632px;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal--fade .modal-inner > img,
+.modal--show .modal-inner > img,
+.modal--fade .modal-inner > video,
+.modal--show .modal-inner > video,
+.modal--fade .modal-inner > iframe,
+.modal--show .modal-inner > iframe {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  position: absolute;
+}
+
+.modal--fade .modal-inner > img,
+.modal--show .modal-inner > img {
+  width: auto;
+  max-width: 100%;
+}
+
+.modal--fade .modal-inner iframe,
+.modal--show .modal-inner iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.modal--fade .modal-content,
+.modal--show .modal-content {
+  position: relative;
+  max-height: 500px;
+  max-height: 60vh;
+padding-right: 5px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal--fade .modal-content > *,
+.modal--show .modal-content > * {
+  max-width: 100%;
+}
+
+.modal--fade footer,
+.modal--show footer {
+  border-top: 1px solid white;
+  padding: 0 1.2em 18px;
+  background: #f0f0f0;
+  border-radius: 2px;
+}
+
+.modal--fade .modal-close,
+.modal--show .modal-close {
+  display: block;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+}
+
+.modal--fade .modal-close:focus:after,
+.modal--show .modal-close:focus:after {
+  outline: 1px dotted;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.modal--fade .modal-close:before,
+.modal--show .modal-close:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.modal--fade .modal-close:after,
+.modal--show .modal-close:after {
+  content: '\00d7';
+  position: absolute;
+  top: 65px;
+  right: 50%;
+  z-index: 20;
+  margin-right: -307px;
+}
+
+@media screen and (max-width: 690px) {
+  .modal--fade .modal-inner, .modal--show .modal-inner {
+    width: auto;
+    left: 20px;
+    right: 20px;
+    margin-left: 0;
+  }
+  .modal--fade .modal-close:after,
+  .modal--show .modal-close:after {
+    margin-right: 0 !important;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .modal--fade, .modal--show {
+    -webkit-transform: translate(0, 400px);
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    -webkit-transition: opacity 1ms .25s;
+    -moz-transition: opacity 1ms .25s;
+    -o-transition: opacity 1ms .25s;
+    -ms-transition: opacity 1ms .25s;
+    transition: opacity 1ms .25s;
+    display: block;
+    right: auto;
+    bottom: auto;
+  }
+  .modal--fade:target,
+  .modal--show:target,
+  .is-active.modal--fade,
+  .is-active.modal--show {
+    width: 100%;
+    height: 100%;
+  }
+  .modal--fade:target .modal-close,
+  .modal--show:target .modal-close,
+  .is-active.modal--fade .modal-close,
+  .is-active.modal--show .modal-close {
+    display: block;
+  }
+  .modal--fade .modal-inner,
+  .modal--show .modal-inner {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    overflow: auto;
+  }
+  .modal--fade .modal-content,
+  .modal--show .modal-content {
+    max-height: none;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+
+  }
+  .modal--fade .modal-close,
+  .modal--show .modal-close {
+    display: none;
+    right: auto;
+  }
+  .modal--fade .modal-close:before,
+  .modal--show .modal-close:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+  }
+  .modal--fade .modal-close:after,
+  .modal--show .modal-close:after {
+    top: 5px !important;
+    right: 5px;
+    left: auto;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-height: 46em) and (min-width: 30em) {
+  .modal--fade .modal-content, .modal--show .modal-content {
+    max-height: 340px;
+    max-height: 50vh;
+  }
+}
+
+@media screen and (max-height: 36em) and (min-width: 30em) {
+  .modal--fade .modal-content, .modal--show .modal-content {
+    max-height: 265px;
+    max-height: 40vh;
+  }
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #808080;
+    opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:	#4D4D4D;
+
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+
+@media screen and (min-width: 30em) {
+  .modal--fade {
+    transition: opacity 0.4s;
+  }
+}
+.modal--fade,
+.modal--show {
+  color: #222;
+  line-height: 1.3;
+}
+
+.modal--fade .modal-inner,
+.modal--show .modal-inner {
+  padding: 10px 0px 10px 10px;
+  border-radius: 2px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  max-width: 100%;
+  -webkit-transition: max-width 0.25s linear, margin-left 0.125s linear;
+  transition: max-width 0.25s linear, margin-left 0.125s linear;
+}
+
+.modal--fade header,
+.modal--show header {
+  border-bottom: 1px solid #ddd;
+}
+
+.modal--fade header > h2,
+.modal--show header > h2 {
+  margin: 0.5em 0;
+}
+
+.modal--fade footer,
+.modal--show footer {
+  border-top: 1px solid white;
+  padding: 0 1.2em 18px;
+  background: #f0f0f0;
+  border-radius: 2px;
+}
+
+.modal--fade .modal-close,
+.modal--show .modal-close {
+  text-indent: -100px;
+}
+
+.modal--fade .modal-close:before,
+.modal--show .modal-close:before {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAEUlEQVQoz2NgeEYAjioYSQoAzOTmAXhPhyoAAAAASUVORK5CYII=");
+}
+
+.modal--fade .modal-close:after,
+.modal--show .modal-close:after {
+  content: '\00d7';
+  background: #fff;
+  border-radius: 2px;
+  padding: 2px 8px;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-indent: 0;
+}
+
+@media screen and (max-width: 30em) {
+  .modal--fade .modal-close:before, .modal--show .modal-close:before {
+    background: #27aae2;
+    height: 3em;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  }
+  .modal--fade .modal-inner,
+  .modal--show .modal-inner {
+    padding-top: 3em;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .modal--fade .modal-close,
+  .modal--show .modal-close {
+    text-decoration: none;
+  }
+  .modal--fade .modal-close:after,
+  .modal--show .modal-close:after {
+    content: attr(data-close);
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+}
+
+</style>
+		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/sites.css?buildTime=1234" />
+<link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/old/fancybox.css?1234" />
+<link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/social-icons.css?buildtime=1234" media="screen,projection" />
+<link rel="stylesheet" type="text/css" href="files/main_style.css?1481769679" title="wsite-theme-css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+
+<link href='http://fonts.googleapis.com/css?family=Cantarell:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Codystar:400,300&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<style type='text/css'>
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {font-family:"Cantarell" !important;}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {font-family:"Codystar" !important;}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+@media screen and (min-width: 767px) {.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+}</style>
+
+		<script src='files/templateArtifacts.js?1480991005'></script>
+<script><!--
+var STATIC_BASE = '//cdn1.editmysite.com/';
+var ASSETS_BASE = '//cdn2.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+//-->
+</script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+
+<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script>
+<script src="http://cdn2.editmysite.com/js/site/main.js?buildTime=1234"></script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script><script> _W.themePlugins = [];</script><script type="text/javascript"><!--
+	var IS_ARCHIVE = 1;
+	
+	(function(jQuery){
+		function initFlyouts(){
+			initPublishedFlyoutMenus(
+				[{"id":"111613361873194677","title":"Home","url":"index.html","target":"","nav_menu":false,"nonclickable":false},{"id":"191217547275162702","title":"Find","url":"find.html","target":"","nav_menu":false,"nonclickable":false},{"id":"734596071614139429","title":"About","url":"about.html","target":"","nav_menu":false,"nonclickable":false},{"id":"315873999659245105","title":"Submit","url":"submit.html","target":"","nav_menu":false,"nonclickable":false},{"id":"589955235790342735","title":"Events","url":"events.html","target":"","nav_menu":false,"nonclickable":false}],
+				"734596071614139429",
+				'',
+				'active',
+				false,
+				{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+				{}
+			)
+		}
+		if (jQuery) {
+			jQuery(document).ready(function() { jQuery(initFlyouts); });
+		}else{
+			if (Prototype.Browser.IE) window.onload = initFlyouts;
+			else document.observe('dom:loaded', initFlyouts);
+		}
+	})(window._W && _W.jQuery)
+//-->
+</script>
+		
+		
+	</head>
+	<body class="header-page page-has-banner  wsite-theme-light  wsite-page-about"><div class="wrapper">
+    <div class="birdseye-header">
+      <div class="nav-wrap">
+        <div class="container">
+          <div class="logo"><span class="wsite-logo">
+
+	<a href="">
+	
+	<span id="wsite-title">TTG</span>
+	
+	</a>
+
+</span></div>
+          <div class="nav desktop-nav"><ul class="wsite-menu-default">
+		<li id="pg111613361873194677" class="wsite-menu-item-wrap">
+			<a
+						href="index.html"
+				class="wsite-menu-item"
+				>
+				Home
+			</a>
+			
+		</li>
+		<li id="pg191217547275162702" class="wsite-menu-item-wrap">
+			<a
+						href="find.html"
+				class="wsite-menu-item"
+				>
+				Find
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-472862026715757901"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="projects1.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Projects
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-561258755725026882"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="stories.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Stories
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-400638123976372896"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="talent.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Talent
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-786231700179575708"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="crew.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Crew
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="active" class="wsite-menu-item-wrap">
+			<a
+						href="about.html"
+				class="wsite-menu-item"
+				>
+				About
+			</a>
+			
+		</li>
+		<li id="pg315873999659245105" class="wsite-menu-item-wrap">
+			<a
+						href="submit.html"
+				class="wsite-menu-item"
+				>
+				Submit
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-452917469683519925"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="projects.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Projects
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-635230231574885531"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="headshots.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Headshots
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-934440857650298136"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="scripts.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Scripts
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-966431815759289181"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="reels.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Reels
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg589955235790342735" class="wsite-menu-item-wrap">
+			<a
+						href="events.html"
+				class="wsite-menu-item"
+				>
+				Events
+			</a>
+			
+		</li>
+</ul>
+</div>
+          <label class="hamburger"><span></span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-wrap">
+      <div class="wsite-elements wsite-not-footer wsite-header-elements">
+	<div class="wsite-section-wrap">
+	<div  class="wsite-section wsite-header-section wsite-section-bg-color" style="background-color: #020202;background-image: none;is_customized: 1;" >
+		<div class="wsite-section-content">
+			
+          <div class="container">
+            <div class="banner">
+				<div class="wsite-section-elements">
+					<h2 class="wsite-content-title">Tisch talent guild.</h2>
+				</div>
+			</div>
+          </div>
+      
+		</div>
+		<div class=""></div>
+	</div>
+</div>
+
+</div>
+
+    </div>
+
+    <div class="main-wrap">
+      <div id="wsite-content" class="wsite-elements wsite-not-footer">
+	<div class="wsite-section-wrap">
+	<div class="wsite-section wsite-body-section wsite-background-2"  >
+		<div class="wsite-section-content">
+          <div class="container">
+			<div class="wsite-section-elements">
+				<h2 class="wsite-content-title" style="text-align:center;"><font size="7">Our Mission.</font></h2>
+
+<div class="paragraph" style="text-align:left;">The Tisch Talent Guild (TTG) is a student-run organization whose goal is to foster creativity and collaboration between the various departments in New York University's Tisch School of the Arts. We provide resources to students and collaborators outside of NYU looking to find talented students to work on their projects. We also sponsor and host events dedicated to furthering the careers of all Tisch students.<br /><br />&#8203;TTG offers a place for Tisch students and the artistic community at large to interact and find&nbsp;like-minded collaborators.&nbsp;Whether you are searching for a&nbsp;dancer, writer, actor, filmmaker, music&nbsp;maker, multimedia creator or photographer&mdash;&nbsp;you can find work or find someone to assist your work. &nbsp;TTG provides an opportunity to gain career experience and to network with your peers and the greater&nbsp;Arts community.<br /><br /></div>
+
+<div><div style="height: 10px; overflow: hidden; width: 100%;"></div>
+<hr class="styled-hr" style="width:100%;"></hr>
+<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
+
+<h2 class="wsite-content-title" style="text-align:center;"><font size="6">&nbsp;<strong>2016-2017</strong>&nbsp;</font><strong style="color: rgb(63, 63, 63);"><font size="6">Executive Board:</font></strong></h2>
+
+<div class="paragraph" style="text-align:center;"><font size="5"><br />Andres Osorio (Co-Chair) &nbsp; &nbsp; &nbsp;&nbsp;Sean Anthony Chia &nbsp;(Co-Chair) &nbsp; &nbsp; &nbsp;<br />&#8203;Crystal Zhang &nbsp;(Communications) &nbsp; &nbsp;&nbsp;Cameron Porette (Head of Coverage)<br />&#8203;</font><br /></div>
+
+<div><div style="height: 20px; overflow: hidden; width: 100%;"></div>
+<hr class="styled-hr" style="width:100%;"></hr>
+<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
+
+<h2 class="wsite-content-title">Anti-Discrimination Policy</h2>
+
+<div class="paragraph"><span>TTG is committed to a policy against discrimination on race, color, religion, sex, sexual orientation,&nbsp;marital or parental status, national origin, age, or handicap. The school reserves the right to exclude &nbsp;listings from any entity that in employment/casting matters has been determined to have a practice&nbsp;unlawfully discriminating on any of the foregoing bases.</span><br /><br /><span>Casting calls should be expansive, not exclusionary. &nbsp;SAG recommends that casting calls contain the&nbsp;phrase "the ability to portray&rdquo;. &nbsp;Actors should have the opportunity to demonstrate they have the ability&nbsp;to portray a given part, rather than be excluded from a casting call based on race, color, religion, sex,&nbsp;sexual orientation, marital or parental status, national origin, age, or handicap.</span></div>
+
+<div class="wsite-spacer" style="height:22px;"></div>
+
+<h2 class="wsite-content-title">Terms and Conditions</h2>
+
+<div class="paragraph"><span>The TTG acts only as an intermediary between posting opportunities and candidates searching for&nbsp;opportunities. TTG is not involved in the actual transaction between these groups. As a result, TTG has&nbsp;no control over the quality, safety or legality of the jobs or resumes posted the truth or accuracy of the&nbsp;listings, the ability of anyone offering opportunities to or the ability of candidates to fulfill opportunities.&nbsp;For government guidelines and standards on internships/trainee programs please see the Fair Labor&nbsp;Standards Act Advisor. In addition, because user authentication on the Internet is difficult, TTG cannot&nbsp;and does not confirm that each user is who they claim to be. Because we do not and cannot control the&nbsp;behavior of participants on our website, in the event that you have a dispute with one or more users,&nbsp;you release TTG and New York University (and our agents and employees) from claims, demands, and&nbsp;damages (actual and consequential, direct and indirect of every kind and nature, known and unknown),&nbsp;arising out of or in any way connected with such disputes. Finally, note that we expect that you will use&nbsp;caution and common sense when using the website. The material contained herein may contain&nbsp;inaccuracies or typographical errors. TTG makes no representations about the accuracy, reliability,&nbsp;completeness, or timeliness of the website or the material. The use of the website is at your own risk.</span></div>
+			</div>
+		</div>
+      </div>
+
+	</div>
+</div>
+
+</div>
+
+    </div>
+    
+    <div class="footer-wrap">
+      <div class="container">
+        <div class="footer"><div class='wsite-elements wsite-footer'>
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:66.161616161616%; padding:0 15px;">
+					
+						
+
+<div class="paragraph" style="text-align:left;"><font size="4"><font color="#d5d5d5">Tisch Talent Guild</font><br /><font color="#d5d5d5">NYU Tisch School of the Arts</font><br /></font><font color="#d5d5d5"><font size="4">tisch.talentguild@gmail.com</font></font></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:33.838383838384%; padding:0 15px;">
+					
+						
+
+<div class="wsite-spacer" style="height:20px;"></div>
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/5/2/9/2/52921565/5611208.png?191" alt="Picture" style="width:191;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div></div></div>
+      </div><!-- end container -->
+    </div><!-- end footer-wrap -->
+  </div><!-- /.wrapper -->
+
+  <div id="navMobile" class="nav mobile-nav">
+    <label class="hamburger"><span></span></label>
+    <ul class="wsite-menu-default">
+    		<li id="pg111613361873194677" class="wsite-menu-item-wrap">
+    			<a
+    						href="index.html"
+    				class="wsite-menu-item"
+    				>
+    				Home
+    			</a>
+    			
+    		</li>
+    		<li id="pg191217547275162702" class="wsite-menu-item-wrap">
+    			<a
+    						href="find.html"
+    				class="wsite-menu-item"
+    				>
+    				Find
+    			</a>
+    			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-472862026715757901"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="projects1.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Projects
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-561258755725026882"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="stories.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Stories
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-400638123976372896"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="talent.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Talent
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-786231700179575708"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="crew.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Crew
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+    		</li>
+    		<li id="active" class="wsite-menu-item-wrap">
+    			<a
+    						href="about.html"
+    				class="wsite-menu-item"
+    				>
+    				About
+    			</a>
+    			
+    		</li>
+    		<li id="pg315873999659245105" class="wsite-menu-item-wrap">
+    			<a
+    						href="submit.html"
+    				class="wsite-menu-item"
+    				>
+    				Submit
+    			</a>
+    			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-452917469683519925"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="projects.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Projects
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-635230231574885531"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="headshots.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Headshots
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-934440857650298136"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="scripts.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Scripts
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-966431815759289181"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="reels.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Reels
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+    		</li>
+    		<li id="pg589955235790342735" class="wsite-menu-item-wrap">
+    			<a
+    						href="events.html"
+    				class="wsite-menu-item"
+    				>
+    				Events
+    			</a>
+    			
+    		</li>
+    </ul>
+  </div>
+
+	<script type="text/javascript" src="files/theme/plugins.js"></script>
+  <script type="text/javascript" src="files/theme/custom.js"></script>
+
+		
+	</body>
+</html>
