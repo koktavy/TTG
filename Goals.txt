@@ -1,0 +1,6 @@
+Headshots should be under 300kb
+Resumes should be under 200kb
+
+Deal with reels at some point too.
+
+This will help reduce overall theme download to offline working/backing up.
